@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AR App API</title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <style>
+    body {
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    .card {
+      background-color: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <%- include('./navbar.ejs') %>
+  <div class="container">
+    <h1 class="text-center mb-4">AR App API</h1>
+
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">How it works</h2>
+        <p class="card-text">
+          This API allows you to upload and access to rich library of 3D
+          models and images for Augmented Reality (AR) applications. Here's
+          how it works:
+        </p>
+        <ol>
+          <li>
+            The server will store the uploaded files and return a JSON
+            response containing the details of the uploaded files.
+          </li>
+          <li>
+            To retrieve a list of all uploaded files of library send a GET
+            request to <code>/api/ar/list</code>.
+          </li>
+          <li>
+            You can access the images and models on URL
+            <code>http://localhost:5000/images/:image_filename</code> and
+            <code>http://localhost:5000/models/:model_filename</code> , respectively.
+          </li>
+          <li>
+            To access the uploaded images and models, use the
+            <code>image_filename</code> and
+            <code>model_filename</code> properties from the JSON response.
+          </li>
+          <!-- <li>
+            The uploaded images and models will be served from the
+            <code>/uploads/images</code> and
+            <code>/uploads/models</code> directories, respectively.
+          </li> -->
+        </ol>
+        <p class="card-text">
+          You can use the upload functionality by visiting
+          <a href="/api/ar/uploads">/api/ar/uploads</a>.
+        </p>
+      </div>  
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
